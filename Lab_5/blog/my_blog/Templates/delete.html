@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Blog Post</title>
+</head>
+<body>
+    <h2>Delete Blog Post</h2>
+    <p>Are you sure you want to delete "{{ product.name }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'product_detail' product.pk %}">Cancel</a>
+    </form>
+</body>
+</html>

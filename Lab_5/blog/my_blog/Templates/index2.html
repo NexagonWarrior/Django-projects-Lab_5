@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }} - Blog</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+img {
+    border-radius: 5px;
+}
+
+div {
+    transition: 0.3s;
+}
+
+div:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+    </style>
+</head>
+<body>
+    <h2>{{ product.name }} - Blog</h2>
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width: 300px;">
+    <p>{{ product.description }}</p>
+
+    <p>
+        <a href="{% url 'edit_product' product.pk %}">Edit</a> |
+        <a href="{% url 'delete_product' product.pk %}">Delete</a><br>
+        <a href="{% url 'product_list' %}">Back to Blogs Home Page</a>
+    </p>
+</body>
+</html>
